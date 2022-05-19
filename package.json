@@ -1,0 +1,23 @@
+{
+  "name": "archively",
+  "version": "1.0.0",
+  "description": "saver of bangers",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "god, himself",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.7.0",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "google-spreadsheet": "^3.3.0",
+    "googleapis": "^100.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
