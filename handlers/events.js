@@ -10,6 +10,8 @@ module.exports = (bot, reload) => {
             delete require.cache[require.resolve(`../events/${f}`)]
         const event = require(`../events/${f}`)
         client.events.set(event.name, event)
+        if(!reload)
+            console.log(`${i + 1}. ${f} loaded`)
     })
     if(!reload)
         initEvents(bot)
@@ -30,6 +32,9 @@ function initEvents(bot) {
     const {client} = bot
     client.on("ready", () => {
         triggerEventHandler(bot, "ready")
+    })
+    client.on("messageCreate", (message) => {
+        triggerEventHandler(bot, "messageCreate", message)
     })
 
 }
