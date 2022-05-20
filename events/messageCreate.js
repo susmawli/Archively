@@ -1,10 +1,8 @@
-const { owners } = require("../bot")
-
 const Discord = require("discord.js")
 module.exports = {
     name: "messageCreate",
     run: async function runAll(bot, message) {
-        const {client} = bot
+        const {client, prefix, owners} = bot
         if (!message.guild) return
         if (message.author.bot) return
         if (!message.content.startsWith(prefix))
@@ -25,7 +23,7 @@ module.exports = {
         }
         catch (err) {
             let errMsg = err.toString()
-            if (errMsg.startsWitch("?")) {
+            if (errMsg.startsWith("?")) {
                 errMsg = errMsg.slice(1)
                 await message.reply(errMsg)
             }
