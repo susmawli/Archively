@@ -1,6 +1,6 @@
 module.exports = {
     name: "ping",
-    category: "info",
+    category: "test",
     permission: [],
     devOnly: false,
     run: async ({client, message, args}) => {
